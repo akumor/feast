@@ -230,7 +230,11 @@ TAG_REGEX = re.compile(
 
 # Only set use_scm_version if git executable exists (setting this variable causes pip to use git under the hood)
 if shutil.which("git"):
-    use_scm_version = {"root": ".", "relative_to": __file__, "tag_regex": TAG_REGEX}
+    use_scm_version = {
+        "root": ".", 
+        "relative_to": __file__, 
+        "tag_regex": TAG_REGEX
+    }
 else:
     use_scm_version = None
 
